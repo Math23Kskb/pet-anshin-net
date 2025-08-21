@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+echo "--- Running frontend linter (pre-commit hook) ---"
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+echo "Changing directory to: $REPO_ROOT/frontend"
+cd "$REPO_ROOT/frontend" && npm run lint
+
+echo "--- Frontend linter passed ---"
