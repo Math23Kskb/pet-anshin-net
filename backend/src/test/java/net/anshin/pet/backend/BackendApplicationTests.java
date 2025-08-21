@@ -1,5 +1,6 @@
 package net.anshin.pet.backend;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
@@ -10,6 +11,7 @@ class BackendApplicationTests {
 
 	@Test
 	void contextLoads() {
+		Assertions.fail("Intentionally failing the build to test the pre-push hook!");
 	}
 
 }
