@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!--
+        - %clr(...){...}: Applies color.
+        - %d{HH:mm:ss.SSS}: A short timestamp (Hour:Minute:Second.Millisecond).
+        - ${LOG_LEVEL_PATTERN:-%5p}: The log level (INFO, DEBUG, etc.), padded to 5 characters.
+        - %-40.40logger{39}: The name of the logger, truncated to 40 characters.
+        - %m%n: The actual log message, followed by a new line.
+    -->
+    <property name="SIMPLE_CONSOLE_LOG_PATTERN"
+              value="%d{HH:mm:ss.SSS} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${SIMPLE_CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+
+    <logger name="net.anshin.pet.backend" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.hibernate" level="ERROR"/>
+    <logger name="com.zaxxer.hikari" level="WARN"/>
+    <logger name="org.flywaydb" level="INFO"/>
+    <logger name="org.testcontainers" level="INFO"/>
+
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
