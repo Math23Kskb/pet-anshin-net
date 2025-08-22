@@ -11,4 +11,9 @@ class CalculatorServiceTest {
     void add() {
         assertEquals(5, calculatorService.add(2, 3));
     }
+
+    @Test
+    void subtract() {
+        assertEquals(1, calculatorService.subtract(3, 2));
+    }
 }
