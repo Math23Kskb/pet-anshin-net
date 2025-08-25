@@ -6,6 +6,6 @@ echo "--- Verifying backend build and tests (pre-push hook) ---"
 REPO_ROOT=$(git rev-parse --show-toplevel)
 
 echo "Running Maven verify in: $REPO_ROOT/backend"
-"$REPO_ROOT/backend/mvnw" -B verify --file "$REPO_ROOT/backend/pom.xml"
+"$REPO_ROOT/backend/mvnw" -B -Dstyle.color=always verify --file "$REPO_ROOT/backend/pom.xml"
 
 echo "--- Backend verification passed ---"
