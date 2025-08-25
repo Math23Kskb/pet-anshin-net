@@ -9,10 +9,6 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration(proxyBeanMethods = false)
 class TestcontainersConfiguration {
 
-	static {
-		System.setProperty("jansi.force", "true");
-	}
-
 	@Bean
 	@ServiceConnection
 	PostgreSQLContainer<?> postgresContainer() {

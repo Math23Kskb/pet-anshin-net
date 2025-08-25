@@ -182,6 +182,12 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.5.3</version>
+				<configuration>
+					<systemPropertyVariables>
+						<spring.output.ansi.enabled>always</spring.output.ansi.enabled>
+						<jansi.force>true</jansi.force>
+					</systemPropertyVariables>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
